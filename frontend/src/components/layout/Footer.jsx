@@ -1,4 +1,4 @@
-import { Camera, Clock3, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { Clock3, MapPin, MessageCircle, Phone } from 'lucide-react';
 import Logo from './Logo';
 
 export default function Footer() {
@@ -9,7 +9,13 @@ export default function Footer() {
           <Logo light />
           <p>Thoughtful spa rituals for radiant skin, healthy hair, and a calmer you.</p>
           <div className="footer__socials">
-            <a className="social-link" href="https://www.instagram.com" aria-label="Instagram"><Camera size={19} /></a>
+            <a className="social-link" href="https://www.instagram.com" aria-label="Instagram">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect width="18" height="18" x="3" y="3" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
             <a className="social-link" href="tel:+16785875161" aria-label="Call Lumina"><Phone size={18} /></a>
             <a className="social-link" href="sms:+16785875161" aria-label="Message Lumina"><MessageCircle size={18} /></a>
           </div>
