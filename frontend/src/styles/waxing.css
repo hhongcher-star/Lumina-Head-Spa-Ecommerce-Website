@@ -1,0 +1,52 @@
+.waxing-page { background: var(--ivory-cream); }
+.waxing-hero { position: relative; min-height: 560px; display: flex; align-items: flex-end; color: var(--ivory); background: url('https://img.grouponcdn.com/deal/SpMch2TzgkteLcGQYNzuC9/2J-2000x1200/v1/t2001x1212.jpg') center 46% / cover no-repeat; }
+.face-waxing-hero { background-image: url('/images/waxing/full-face-waxing.png'); background-position: center 38%; }
+.mens-waxing-hero { background-image: url('https://images.squarespace-cdn.com/content/v1/678e86f23965517c9e0fb95e/ec21f1e0-045b-464d-8795-89f7fa6ad3c6/Waxing%2BR%C3%BCcken%2BMann%2Bin%2BZ%C3%BCrich%2B-%2BMenesthetic.png'); background-position: center 46%; }
+.waxing-hero__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,43,29,.93), rgba(12,43,29,.62) 44%, rgba(12,43,29,.08) 76%); }
+.waxing-hero__content { position: relative; z-index: 1; padding-bottom: 66px; }
+.waxing-hero h1 { max-width: 720px; margin: 0; font: 500 clamp(57px, 6vw, 84px)/.88 var(--serif); }
+.waxing-hero__content > p:not(.eyebrow) { max-width: 540px; margin: 23px 0 27px; color: rgba(255,255,255,.86); font-size: 13px; line-height: 1.7; }
+.waxing-intro { padding-block: 82px 58px; display: grid; grid-template-columns: 1fr .9fr; gap: 100px; align-items: end; }
+.waxing-intro h2, .waxing-cta h2 { margin: 0; color: var(--forest); font: 600 clamp(42px, 4.5vw, 61px)/.95 var(--serif); }
+.waxing-intro > p { max-width: 520px; margin: 0 0 4px; color: #647068; font-size: 12px; line-height: 1.8; }
+.waxing-services { padding-bottom: 105px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.waxing-card { min-width: 0; overflow: hidden; background: rgba(255,255,255,.82); border: 1px solid rgba(218,211,193,.85); box-shadow: 0 14px 34px rgba(36,51,42,.07); scroll-margin-top: 118px; transition: transform .25s ease, box-shadow .25s ease; }
+.waxing-card:hover { transform: translateY(-5px); box-shadow: 0 22px 46px rgba(36,51,42,.11); }
+.waxing-card > img { width: 100%; height: 285px; object-fit: cover; }
+.waxing-card__content { padding: 25px 27px 23px; }
+.waxing-card__heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.waxing-card__heading p { margin: 0 0 7px; color: var(--gold); font-size: 8px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; }
+.waxing-card h3 { margin: 0; color: var(--forest); font: 600 29px/1.05 var(--serif); }
+.waxing-card__heading strong { flex: none; color: var(--forest); font: 600 25px/1 var(--serif); }
+.waxing-card__description { min-height: 46px; margin: 20px 0 23px; color: #53645a; font-size: 11px; line-height: 1.7; }
+.waxing-card__content > a { min-height: 39px; display: flex; align-items: center; justify-content: center; gap: 9px; color: var(--ivory); background: var(--forest); font-size: 9px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; }
+.waxing-card__content > a:hover { background: var(--gold); }
+.waxing-cta { min-height: 390px; display: grid; place-items: center; color: var(--ivory); text-align: center; background: linear-gradient(rgba(20,63,49,.84), rgba(20,63,49,.84)), url('https://konturbeautylabs.ro/images/services/epilare-cu-ceara/epilare-cu-ceara-4.jpg') center / cover; }
+.face-waxing-cta { background-image: linear-gradient(rgba(20,63,49,.84), rgba(20,63,49,.84)), url('/images/waxing/brow-lips-waxing.png'); }
+.mens-waxing-cta { background-image: linear-gradient(rgba(20,63,49,.84), rgba(20,63,49,.84)), url('https://viktormensgrooming.com.au/cdn/shop/files/Viktor_Men_s_Grooming_Wellbeing_Lounge_waxing_for_men_Caloundra.png?v=1771367797&width=1600'); }
+.waxing-cta h2 { margin-bottom: 28px; color: var(--ivory); }
+
+@media (max-width: 760px) {
+  .waxing-hero { min-height: 630px; align-items: flex-start; background-position: 58% center; }
+  .waxing-hero__shade { background: linear-gradient(0deg, rgba(12,43,29,.91), rgba(12,43,29,.23)); }
+  .waxing-hero__content { padding-top: 175px; padding-bottom: 85px; }
+  .waxing-hero h1 { font-size: 50px; }
+  .waxing-intro { padding-block: 62px 38px; grid-template-columns: 1fr; gap: 25px; }
+  .waxing-intro h2 { font-size: 44px; }
+  .waxing-services { gap: 16px; }
+  .waxing-card > img { height: 240px; }
+}
+
+@media (max-width: 520px) {
+  .waxing-hero { min-height: 660px; }
+  .waxing-hero__content { padding-top: 155px; }
+  .waxing-hero h1 { font-size: 43px; }
+  .waxing-hero .button { width: 100%; }
+  .waxing-services { grid-template-columns: 1fr; }
+  .waxing-card > img { height: 250px; }
+  .waxing-card__content { padding: 23px 21px 20px; }
+  .waxing-card h3 { font-size: 28px; }
+  .waxing-card__description { min-height: 0; font-size: 11px; }
+  .waxing-cta { min-height: 340px; }
+  .waxing-cta h2 { font-size: 42px; }
+}
