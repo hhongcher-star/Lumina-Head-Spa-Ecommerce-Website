@@ -120,7 +120,7 @@ export default function Home() {
               <iframe
                 title="Map to Lumina Head Spa"
                 src="https://www.google.com/maps?q=2390+Chamblee+Tucker+Rd+Suite+102,+Chamblee,+GA+30341&output=embed"
-                loading="lazy"
+                loading="eager"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>

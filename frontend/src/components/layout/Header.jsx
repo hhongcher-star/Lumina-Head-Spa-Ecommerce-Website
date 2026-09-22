@@ -168,6 +168,7 @@ export default function Header() {
           <a className={navClass('/group-events')} href="/group-events">Group Events</a>
           <a className={navClass('/gift-card')} href="/gift-card">Gift Card</a>
           <a className={navClass('/spa-facilities')} href="/spa-facilities">Our Spa</a>
+          <a className="mobile-nav-book button button--forest" href="/book-now">Book Now</a>
         </nav>
         <a className="button button--header" href="/book-now">Book Now</a>
       </div>

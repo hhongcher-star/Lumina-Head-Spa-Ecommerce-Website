@@ -53,8 +53,10 @@
   .facial-treatment__details h4 { font-size: 13px; }
   .facial-treatment__details ul, .facial-treatment__details ol { padding-left: 17px; font-size: 11px; line-height: 1.65; }
   .facial-treatment__footer { align-items: flex-start; flex-direction: column; gap: 10px; }
-  .facial-treatment__footer p { white-space: normal; line-height: 1.45; }
-  .facial-treatment__footer a { width: 100%; min-width: 0; min-height: 34px; }
+  .facial-treatment__footer p { display: flex; align-items: baseline; gap: 8px; white-space: normal; font-size: 15px; line-height: 1.45; }
+  .facial-treatment__footer p span { margin-right: 3px; font-size: 13px; }
+  .facial-treatment__footer p strong { font-size: 17px; }
+  .facial-treatment__footer a { width: 100%; min-width: 0; min-height: 46px; font-size: 11px; }
   .facial-cta { min-height: 340px; }
   .facial-cta h2 { font-size: 42px; }
 }
