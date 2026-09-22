@@ -100,7 +100,8 @@ export default function SiteExperience({ path }) {
 
     document.querySelectorAll('main img').forEach((image, index) => {
       image.decoding = 'async';
-      if (index > 1 && !image.closest('.booking-service-modal, .service-modal')) image.loading = 'lazy';
+      if (index > 1 && !image.closest('.booking-service-modal, .service-modal, .spa-carousel')) image.loading = 'lazy';
+      if (image.closest('.spa-carousel')) image.loading = 'eager';
     });
 
     if (reduceMotion) {
