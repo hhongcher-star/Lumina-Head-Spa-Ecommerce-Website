@@ -27,8 +27,8 @@
 .facial-cta h2 { margin-bottom: 28px; color: var(--ivory); }
 
 @media (max-width: 760px) {
-  .facial-hero { min-height: 610px; align-items: flex-start; background-position: 60% center; }
-  .facial-hero__content { padding-top: 195px; padding-bottom: 96px; }
+  .facial-hero { min-height: 500px; align-items: flex-start; background-position: 60% center; }
+  .facial-hero__content { padding-top: 145px; padding-bottom: 55px; }
   .facial-hero h1 { font-size: 51px; line-height: .92; }
   .facial-hero__content > p:last-child { margin-top: 18px; font-size: 12px; line-height: 1.55; }
   .facial-intro { padding-block: 62px 38px; grid-template-columns: 1fr; gap: 25px; }
@@ -40,8 +40,8 @@
 }
 
 @media (max-width: 520px) {
-  .facial-hero { min-height: 620px; background-position: 58% center; }
-  .facial-hero__content { padding-top: 175px; padding-bottom: 115px; }
+  .facial-hero { min-height: 500px; background-position: 58% center; }
+  .facial-hero__content { padding-top: 140px; padding-bottom: 55px; }
   .facial-hero h1 { font-size: 46px; }
   .facial-hero__content > p:last-child { margin-top: 14px; }
   .facial-treatments { grid-template-columns: 1fr; gap: 16px; }

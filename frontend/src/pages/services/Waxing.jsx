@@ -37,7 +37,6 @@ export default function Waxing() {
             <p className="eyebrow eyebrow--light">Waxing Services</p>
             <h1>Smooth Skin.<br />Lasting Confidence.</h1>
             <p>Reveal smooth, radiant skin with professional waxing care designed around comfort, precision, and beautiful results.</p>
-            <a className="button button--gold" href="/book-now?service=Waxing">Book Now <ArrowRight size={17} /></a>
           </div>
         </section>
 

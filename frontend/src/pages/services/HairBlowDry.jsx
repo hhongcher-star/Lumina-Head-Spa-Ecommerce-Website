@@ -22,12 +22,6 @@ export default function HairBlowDry() {
             <p className="eyebrow eyebrow--light">Hair Blow Dry</p>
             <h1>Effortless Style,<br /><em>Beautifully Finished.</em></h1>
             <p>Complete your spa experience with a smooth, polished blow dry designed to leave your hair feeling fresh, soft, and beautifully styled.</p>
-            <a className="button button--gold" href="/book-now?service=Hair%20Blow%20Dry">Book Now <ArrowRight size={17} /></a>
-            <div className="blow-dry-hero__note">
-              <span>Good Hair</span>
-              <span>Elevates</span>
-              <span>Every Moment</span>
-            </div>
           </div>
         </section>
 
@@ -39,7 +33,7 @@ export default function HairBlowDry() {
             <p>Whether you prefer a soft and natural look or something more refined, each blow dry is approached with care to complement your hair and personal style.</p>
           </div>
           <figure className="blow-dry-intro__image">
-            <img src="/images/hair-blow-dry/good-hair-days.png" alt="Good hair brighter days" />
+            <img src="/images/hair-blow-dry/good-hair-days.webp" alt="Good hair brighter days" />
           </figure>
         </section>
 

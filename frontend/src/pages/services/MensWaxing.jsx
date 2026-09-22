@@ -9,9 +9,9 @@ const images = {
   back: 'https://images.squarespace-cdn.com/content/v1/678e86f23965517c9e0fb95e/ec21f1e0-045b-464d-8795-89f7fa6ad3c6/Waxing%2BR%C3%BCcken%2BMann%2Bin%2BZ%C3%BCrich%2B-%2BMenesthetic.png',
   body: 'https://charlotted.fr/img/cire-dos-homme.jpg',
   grooming: 'https://viktormensgrooming.com.au/cdn/shop/files/Viktor_Men_s_Grooming_Wellbeing_Lounge_waxing_for_men_Caloundra.png?v=1771367797&width=1600',
-  fullLeg: '/images/waxing/men/full-leg-wax.png',
+  fullLeg: '/images/waxing/men/full-leg-wax.webp',
   chest: '/images/waxing/men/chest-wax.jpg',
-  fullFront: '/images/waxing/men/full-front-wax.jpg',
+  fullFront: '/images/waxing/men/full-front-wax.webp',
   stomach: '/images/waxing/men/stomach-wax.jpg',
 };
 
@@ -43,7 +43,6 @@ export default function MensWaxing() {
             <p className="eyebrow eyebrow--light">Men’s Waxing Services</p>
             <h1>Clean Lines.<br />Quiet Confidence.</h1>
             <p>Professional waxing tailored for men, with discreet care, efficient service, and smooth results.</p>
-            <a className="button button--gold" href="/book-now?service=Men%27s%20Waxing">Book Now <ArrowRight size={17} /></a>
           </div>
         </section>
 

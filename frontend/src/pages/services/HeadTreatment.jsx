@@ -1,4 +1,4 @@
-import { ArrowRight, Clock3, MapPin, Phone, X } from 'lucide-react';
+import { ArrowRight, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import FloatingActions from '../../components/common/FloatingActions';
 import Footer from '../../components/layout/Footer';
@@ -12,24 +12,24 @@ const treatments = [
     name: 'Lumina Total Therapy Experience',
     price: '$218',
     duration: '130 Min',
-    image: '/images/head-treatment/total-therapy-experience.png',
+    image: '/images/head-treatment/total-therapy-experience.webp',
     intro: 'The ultimate reset — for those who want to feel completely renewed. Ideal for deep stress relief and full-body recovery.',
     options: [
       {
         title: 'A. Hydrating Facial + Head Spa',
-        image: '/images/head-treatment/hydrating-facial-head-spa.png',
+        image: '/images/head-treatment/hydrating-facial-head-spa.webp',
         highlights: ['70-min Booster Hydrating Facial', '60-min Head Spa Therapy'],
         description: 'Infuses moisture-repair ingredients for smoother, firmer skin. Relieves scalp tension, boosts circulation, and promotes healthier hair growth.',
       },
       {
         title: 'B. Head Spa + Hot Stone Back Massage',
-        image: '/images/head-treatment/hot-stone-back-massage.png',
+        image: '/images/head-treatment/hot-stone-back-massage.webp',
         highlights: ['70-min Head Spa Therapy', '60-min Hot Stone Back Massage'],
         description: 'Soothes the nervous system and refreshes the scalp. Heated stones with customized oils penetrate deep to relieve shoulder and back stiffness.',
       },
       {
         title: 'C. Head Spa + Facial + Back Renewal',
-        image: '/images/head-treatment/facial-back-renewal.png',
+        image: '/images/head-treatment/facial-back-renewal.webp',
         highlights: ['70-min Head Spa Therapy', '30-min Back Facial', '30-min Facial'],
         description: 'Head therapy revives hair roots, back facial clears breakouts, and facial restores radiance. Three in one, renewed from head to toe.',
       },
@@ -86,17 +86,17 @@ const treatments = [
     number: '04',
     name: 'Lumina Essential Head Spa',
     duration: '80 Min',
-    image: '/images/head-treatment/essential-head-spa.png',
+    image: '/images/head-treatment/essential-head-spa.webp',
     intro: 'Your perfect first step into true scalp care. A gentle starting point for regular care.',
     options: [
       {
         title: 'A. Classic Head Spa',
-        image: '/images/head-treatment/classic-head-spa.png',
+        image: '/images/head-treatment/classic-head-spa.webp',
         description: 'A calming scalp ritual featuring deep cleansing, gentle exfoliation, soothing massage, and warm steam to open pores and release buildup. Finished with a nourishing mask to restore scalp balance and promote healthier hair growth.',
       },
       {
         title: 'B. Head Spa + Express Facial Escape',
-        image: '/images/head-treatment/head-spa-express-facial.png',
+        image: '/images/head-treatment/head-spa-express-facial.webp',
         highlights: ['45-min relaxing head spa', '35-min facial'],
         description: 'Deep-cleanses, exfoliates, and steams the scalp to release buildup, while a nourishing mask restores balance and promotes healthier hair growth. The facial cleans, hydrates, and revives skin.',
       },
@@ -109,7 +109,7 @@ const treatments = [
     name: 'Express Scalp Therapy',
     price: '$78',
     duration: '45 Min',
-    image: '/images/head-treatment/express-scalp-therapy.png',
+    image: '/images/head-treatment/express-scalp-therapy.webp',
     intro: 'A quick refresh when you just need to feel better. Simple, effective, and easy to fit into your routine.',
     details: 'A 45-minute targeted treatment designed to relieve scalp tension, reduce buildup, and stimulate circulation. Helping to refresh the scalp environment and leave you feeling light, clean, and rebalanced.',
     options: [],
@@ -146,14 +146,6 @@ export default function HeadTreatment() {
             <p className="eyebrow eyebrow--light">Lumina Head Spa</p>
             <h1>Head Therapy<br />Price List</h1>
             <p className="head-hero__description">A quiet space to slow down, release tension, and restore balance — whether you seek a quick refresh or a full-body reset.</p>
-            <div className="head-hero__actions">
-              <a className="button button--gold" href="/book-now">Book Now <ArrowRight size={17} /></a>
-              <div className="head-hero__contact">
-                <span><MapPin size={15} />2890 Chamblee Tucker Rd, Chamblee, GA 30341</span>
-                <a href="tel:+16785875161"><Phone size={15} />(678) 587-5161</a>
-                <span><Clock3 size={15} />Mon–Sun 10AM – 8:30PM</span>
-              </div>
-            </div>
           </div>
         </section>
 

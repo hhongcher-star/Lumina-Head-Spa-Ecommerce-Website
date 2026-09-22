@@ -34,7 +34,7 @@ export default function Home() {
                 <strong>10% Off Head Spa</strong>
                 <em>Tuesday - Thursday</em>
               </div>
-              <a className="button button--gold" href="/book-now">Book Your Experience <ArrowRight size={17} /></a>
+              <a className="button button--gold hero__booking-button" href="/book-now">Book Your Experience <ArrowRight size={19} /></a>
               <div className="hero__business-hours">
                 <span className="hero__hours-line" />
                 <Clock3 size={22} />

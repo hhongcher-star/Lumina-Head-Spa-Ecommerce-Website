@@ -34,18 +34,12 @@ export default function GroupEvents() {
       <Header />
       <main className="groups-page">
         <section className="groups-hero">
-          <img src="/images/group-events/group-celebration.jpg" alt="Friends celebrating a group spa day together" />
+          <img src="/images/group-events/group-celebration.webp" alt="Friends celebrating a group spa day together" />
           <div className="groups-hero__shade" />
           <div className="groups-hero__content page-width">
             <p className="eyebrow eyebrow--light">Group Experiences</p>
             <h1>Celebrate Together,<br /><em>Unwind Together.</em></h1>
             <p>Thoughtfully curated spa experiences designed for meaningful moments, celebrations, and time together.</p>
-            <a className="button button--gold" href="tel:+16785875161">Call to Plan <ArrowRight size={17} /></a>
-            <div className="groups-hero__words">
-              <span>Relax</span><i />
-              <span>Connect</span><i />
-              <span>Celebrate</span>
-            </div>
           </div>
         </section>
 
@@ -104,7 +98,7 @@ export default function GroupEvents() {
           <p className="eyebrow eyebrow--light">Ready to Plan Your Spa Day?</p>
           <h2>Let’s Create Your Perfect Group Experience.</h2>
           <p>Call us to arrange a personalized spa experience for your special occasion.</p>
-          <a className="button button--gold" href="tel:+16785875161">Call (678) 587-5161 <ArrowRight size={17} /></a>
+          <a className="button button--gold groups-cta__button" href="tel:+16785875161">Call (678) 587-5161 <ArrowRight size={19} /></a>
         </section>
       </main>
       <Footer />

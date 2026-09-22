@@ -54,8 +54,13 @@ const serviceGroups = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+  const navClass = (path) => `main-nav__link${currentPath === path ? ' main-nav__link--active' : ''}`;
 
   useEffect(() => {
+    if (!open) setServicesOpen(false);
     if (!open) return undefined;
 
     const closeOnEscape = (event) => {
@@ -71,8 +76,15 @@ export default function Header() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const updateHeader = () => setScrolled(window.scrollY > 36);
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    return () => window.removeEventListener('scroll', updateHeader);
+  }, []);
+
   return (
-    <header className={`site-header${open ? ' site-header--menu-open' : ''}`}>
+    <header className={`site-header${open ? ' site-header--menu-open' : ''}${scrolled ? ' site-header--scrolled' : ''}`}>
       <div className="site-header__inner page-width">
         <Logo />
         <button
@@ -99,11 +111,16 @@ export default function Header() {
           }}
         >
           <div className="mobile-nav-brand" aria-hidden="true">
-            <img src="/images/brand/lumina-logo.png" alt="" />
+            <img src="/images/brand/lumina-logo.webp" alt="" />
           </div>
-          <a className="main-nav__link main-nav__link--active" href="/">Home</a>
-          <div className="nav-dropdown">
-            <button className="main-nav__link nav-dropdown__button" type="button">
+          <a className={navClass('/')} href="/">Home</a>
+          <div className={`nav-dropdown${servicesOpen ? ' nav-dropdown--open' : ''}`}>
+            <button
+              className={`main-nav__link nav-dropdown__button${currentPath.startsWith('/services/') ? ' main-nav__link--active' : ''}`}
+              type="button"
+              aria-expanded={servicesOpen}
+              onClick={() => setServicesOpen((value) => !value)}
+            >
               Services <ChevronDown size={14} strokeWidth={1.7} />
             </button>
             <div className="nav-dropdown__menu">
@@ -148,9 +165,9 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <a className="main-nav__link" href="/group-events">Group Events</a>
-          <a className="main-nav__link" href="/gift-card">Gift Card</a>
-          <a className="main-nav__link" href="/spa-facilities">Our Spa</a>
+          <a className={navClass('/group-events')} href="/group-events">Group Events</a>
+          <a className={navClass('/gift-card')} href="/gift-card">Gift Card</a>
+          <a className={navClass('/spa-facilities')} href="/spa-facilities">Our Spa</a>
         </nav>
         <a className="button button--header" href="/book-now">Book Now</a>
       </div>

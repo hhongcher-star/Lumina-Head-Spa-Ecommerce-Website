@@ -10,21 +10,21 @@ const services = [
     name: 'Full Face Waxing',
     price: '$50',
     description: 'Remove unwanted hair from your entire face for a smooth, radiant look. Our full face waxing is gentle yet effective, leaving your skin soft and hair-free. Ideal for maintaining a clean and polished appearance.',
-    image: '/images/waxing/full-face-waxing.png',
+    image: '/images/waxing/full-face-waxing.webp',
   },
   {
     id: 'brow-waxing',
     name: 'Brow Waxing',
     price: '$12',
     description: 'Shape and define your eyebrows with our precise brow waxing service. We tailor the shape to suit your facial features, giving you perfectly groomed brows that enhance your natural beauty.',
-    image: '/images/waxing/brow-waxing.png',
+    image: '/images/waxing/brow-waxing.webp',
   },
   {
     id: 'brow-lips-waxing',
     name: 'Brow + Lips Waxing',
     price: '$20',
     description: 'Get both your brows shaped and lips hair-free in one quick session. This combo service offers convenience and great value while keeping your face looking neat and fresh.',
-    image: '/images/waxing/brow-lips-waxing.png',
+    image: '/images/waxing/brow-lips-waxing.webp',
   },
 ];
 
@@ -39,7 +39,6 @@ export default function FaceWaxing() {
             <p className="eyebrow eyebrow--light">Face Waxing</p>
             <h1>Smooth. Defined.<br />Naturally You.</h1>
             <p>Gentle and precise facial waxing for beautifully smooth skin and clean, polished definition.</p>
-            <a className="button button--gold" href="/book-now?service=Face%20Waxing">Book Now <ArrowRight size={17} /></a>
           </div>
         </section>
 

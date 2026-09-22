@@ -1,6 +1,6 @@
 .waxing-page { background: var(--ivory-cream); }
 .waxing-hero { position: relative; min-height: 560px; display: flex; align-items: flex-end; color: var(--ivory); background: url('https://img.grouponcdn.com/deal/SpMch2TzgkteLcGQYNzuC9/2J-2000x1200/v1/t2001x1212.jpg') center 46% / cover no-repeat; }
-.face-waxing-hero { background-image: url('/images/waxing/full-face-waxing.png'); background-position: center 38%; }
+.face-waxing-hero { background-image: url('/images/waxing/full-face-waxing.webp'); background-position: center 38%; }
 .mens-waxing-hero { background-image: url('https://images.squarespace-cdn.com/content/v1/678e86f23965517c9e0fb95e/ec21f1e0-045b-464d-8795-89f7fa6ad3c6/Waxing%2BR%C3%BCcken%2BMann%2Bin%2BZ%C3%BCrich%2B-%2BMenesthetic.png'); background-position: center 46%; }
 .waxing-hero__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,43,29,.93), rgba(12,43,29,.62) 44%, rgba(12,43,29,.08) 76%); }
 .waxing-hero__content { position: relative; z-index: 1; padding-bottom: 66px; }
@@ -22,14 +22,15 @@
 .waxing-card__content > a { min-height: 39px; display: flex; align-items: center; justify-content: center; gap: 9px; color: var(--ivory); background: var(--forest); font-size: 9px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; }
 .waxing-card__content > a:hover { background: var(--gold); }
 .waxing-cta { min-height: 390px; display: grid; place-items: center; color: var(--ivory); text-align: center; background: linear-gradient(rgba(20,63,49,.84), rgba(20,63,49,.84)), url('https://konturbeautylabs.ro/images/services/epilare-cu-ceara/epilare-cu-ceara-4.jpg') center / cover; }
-.face-waxing-cta { background-image: linear-gradient(rgba(20,63,49,.84), rgba(20,63,49,.84)), url('/images/waxing/brow-lips-waxing.png'); }
+.face-waxing-cta { background-image: linear-gradient(rgba(20,63,49,.84), rgba(20,63,49,.84)), url('/images/waxing/brow-lips-waxing.webp'); }
 .mens-waxing-cta { background-image: linear-gradient(rgba(20,63,49,.84), rgba(20,63,49,.84)), url('https://viktormensgrooming.com.au/cdn/shop/files/Viktor_Men_s_Grooming_Wellbeing_Lounge_waxing_for_men_Caloundra.png?v=1771367797&width=1600'); }
 .waxing-cta h2 { margin-bottom: 28px; color: var(--ivory); }
 
 @media (max-width: 760px) {
-  .waxing-hero { min-height: 630px; align-items: flex-start; background-position: 58% center; }
+  .waxing-hero { min-height: 500px; align-items: flex-start; background-position: 58% center; }
   .waxing-hero__shade { background: linear-gradient(0deg, rgba(12,43,29,.91), rgba(12,43,29,.23)); }
-  .waxing-hero__content { padding-top: 175px; padding-bottom: 85px; }
+  .waxing-hero__content { padding-top: 145px; padding-bottom: 55px; }
+  .waxing-hero__content > p:not(.eyebrow) { margin-bottom: 0; }
   .waxing-hero h1 { font-size: 50px; }
   .waxing-intro { padding-block: 62px 38px; grid-template-columns: 1fr; gap: 25px; }
   .waxing-intro h2 { font-size: 44px; }
@@ -38,8 +39,8 @@
 }
 
 @media (max-width: 520px) {
-  .waxing-hero { min-height: 660px; }
-  .waxing-hero__content { padding-top: 155px; }
+  .waxing-hero { min-height: 500px; }
+  .waxing-hero__content { padding-top: 140px; padding-bottom: 55px; }
   .waxing-hero h1 { font-size: 43px; }
   .waxing-hero .button { width: 100%; }
   .waxing-services { grid-template-columns: 1fr; }
