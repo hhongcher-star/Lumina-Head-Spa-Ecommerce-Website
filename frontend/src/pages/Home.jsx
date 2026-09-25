@@ -27,11 +27,11 @@ export default function Home() {
           <div className="hero__shade" />
           <div className="hero__content page-width">
             <div className="hero__intro">
-              <h1>Bespoke Korean Head Spa - Elevating Beauty &amp; Wellness</h1>
+              <h1>Lumina Head Spa for Calm, Beauty &amp; Renewal</h1>
               <span className="hero__rule" />
               <p className="hero__description">
-                Inspired by the Korean tradition of meticulous craftsmanship, we dedicate every
-                treatment to sincere, attentive care-nurturing both beauty and well-being.
+                A serene Chamblee spa for restorative head treatments, advanced facials, waxing,
+                and polished hair finishing, with personalized care designed around your pace.
               </p>
               <div className="hero__actions">
                 <a className="button button--gold hero__booking-button" href="/book-now">Book Now <ArrowRight size={19} /></a>
