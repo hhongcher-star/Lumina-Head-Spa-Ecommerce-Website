@@ -2,17 +2,20 @@ import { ArrowLeft, ArrowRight, CalendarDays, Check, Clock3, MapPin, Minus, Phon
 import { useMemo, useState } from 'react';
 import Footer from '../components/layout/Footer';
 import Header from '../components/layout/Header';
+import { bodyWaxingServices } from './services/Waxing';
+import { mensWaxingServices } from './services/MensWaxing';
 import '../styles/booking.css';
 
-const serviceGroups = [
+export const serviceGroups = [
   {
     name: 'Facial Treatments',
     services: [
-      { name: '01-Line Repair Facial', description: 'Revitalize your skin with our Line Repair Facial, designed to hydrate and rejuvenate for a youthful glow.', detail: 'This targeted treatment combines advanced anti-aging techniques with nourishing formulas to smooth fine lines and restore skin elasticity. Book your personalized appointment today and experience a refreshed, radiant complexion.\n\n体验我们的 Line Repair 面部护理，为肌肤注入活力，深层补水并焕发年轻光彩。这项针对性护理结合了先进的抗衰老技术与滋养配方，能有效抚平细纹，重塑肌肤弹性。', price: 98, duration: '1 hr 10 min', image: '/images/facial/line-repair.webp' },
-      { name: '02-Timeless Facial', description: 'Targets signs of aging while promoting radiant, rejuvenated skin and improved elasticity.', detail: 'The Timeless Facial incorporates natural ingredients and advanced techniques to restore elasticity, reduce fine lines, and improve overall skin texture. With a focus on easy application and comfort, it is perfect for those seeking a professional treatment to enhance their skincare routine.\n\nTimeless 面部护理专为针对肌肤老化迹象而设计，旨在令肌肤焕发光彩、重现年轻活力。护理融合天然成分与先进技术，有助于恢复肌肤弹性、淡化细纹。', price: 118, duration: '1 hr 20 min', image: '/images/facial/timeless-facial.webp' },
-      { name: '03-Unstressed Facial', description: 'For sensitive, reddish, acne-prone, or problematic skin. Helps improve the skin barrier.', detail: 'Benefit for sensitive, reddish, acne-prone, problematic skin looking. Improve the skin barrier.\n\n有益于敏感、泛红、易长痘及问题肌肤，有助于改善肌肤屏障。', price: 118, duration: '1 hr 30 min', image: '/images/facial/unstressed-facial.webp' },
-      { name: '04-Line Repair Facial Lift', description: 'Designed for mature skin to improve facial and neck wrinkles and fine lines.', detail: 'Address for mature skin. Improvement for facial and neck wrinkles and fine lines.\n\n专为成熟肌肤设计，改善面部及颈部的皱纹与细纹。', price: 138, duration: '1 hr 30 min', image: '/images/facial/line-repair-facial-lift.webp' },
-      { name: '05-Unstress & Facial Lift', description: 'An advanced facial treatment combining deep care with lifting techniques.', detail: 'Advanced facial treatment, combined with all three facial programs above. Also help for pimples.\n\n高级面部护理，结合上述所有三种面部护理方案。对痘痘也有帮助。', price: 178, duration: '2 hr 20 min', image: '/images/facial/unstress-facial-lift.webp' },
+      { name: 'The Signature Peptide Renewal', description: 'A rejuvenating facial designed to support collagen, restore moisture, and reveal a firmer, more radiant complexion.', detail: 'Deep cleansing, enzyme peel, microcurrent treatment, facial massage, and a hydrating mask.', price: 240, duration: '1 hr 30 min', image: '/images/facial/signature-peptide-renewal.webp' },
+      { name: 'Line Repair', description: 'Target fine lines and signs of dehydration with advanced skin repair care.', detail: 'Deep cleansing, Vitamin C enzyme peel, facial massage, hydrating mask, and LED light therapy.', price: 175, duration: '1 hr 15 min', image: '/images/facial/line-repair.webp' },
+      { name: 'Unstressed Facial', description: 'A soothing facial created to reduce redness and calm sensitive or irritated skin.', detail: 'Deep cleansing, gentle exfoliation, facial massage, and a hydrating calming mask.', price: 175, duration: '1 hr 15 min', image: '/images/facial/unstressed-facial.webp' },
+      { name: 'Line Repair + Facial Lift', description: 'Combines advanced skin repair with facial lifting and microcurrent.', detail: 'Deep cleansing, enzyme peel, microcurrent, facial massage, and a hydrating mask.', price: 210, duration: '1 hr 30 min', image: '/images/facial/line-repair-facial-lift.webp' },
+      { name: 'Unstress + Facial Lift', description: 'Calming care and gentle lifting for sensitive or stressed skin.', detail: 'Deep cleansing, gentle exfoliation, microcurrent, facial massage, and a hydrating calming mask.', price: 210, duration: '1 hr 30 min', image: '/images/facial/unstress-facial-lift.webp' },
+      { name: 'Timeless Facial', description: 'A deeply nourishing ritual for mature skin that encourages renewal and restores radiance.', detail: 'Deep cleansing, exfoliation or enzyme treatment, facial massage, and a hydrating mask.', price: 175, duration: '1 hr 15 min', image: '/images/facial/timeless-facial.webp' },
     ],
   },
   {
@@ -37,6 +40,17 @@ const serviceGroups = [
     ],
   },
 ];
+
+const waxingBookingServices = [...bodyWaxingServices, ...mensWaxingServices].map((service) => ({
+  name: service.name,
+  description: service.description,
+  detail: service.description,
+  price: Number.parseFloat(service.price.replace(/[^0-9.]/g, '')),
+  duration: 'Duration varies',
+  image: service.image,
+}));
+
+serviceGroups[2].services.push(...waxingBookingServices);
 
 const allServices = serviceGroups.flatMap((group) => group.services);
 

@@ -4,7 +4,7 @@ import Footer from '../../components/layout/Footer';
 import Header from '../../components/layout/Header';
 import '../../styles/waxing.css';
 
-const services = [
+export const faceWaxingServices = [
   {
     id: 'full-face-waxing',
     name: 'Full Face Waxing',
@@ -51,7 +51,7 @@ export default function FaceWaxing() {
         </section>
 
         <section className="waxing-services page-width" aria-label="Face waxing services">
-          {services.map((service) => (
+          {faceWaxingServices.map((service) => (
             <article className="waxing-card" id={service.id} key={service.id}>
               <img src={service.image} alt={`${service.name} service`} />
               <div className="waxing-card__content">

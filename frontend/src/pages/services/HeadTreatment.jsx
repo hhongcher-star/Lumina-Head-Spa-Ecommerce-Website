@@ -5,7 +5,7 @@ import Footer from '../../components/layout/Footer';
 import Header from '../../components/layout/Header';
 import '../../styles/head-treatment.css';
 
-const treatments = [
+export const headTreatments = [
   {
     id: 'total-therapy',
     number: '01',
@@ -158,7 +158,7 @@ export default function HeadTreatment() {
         </section>
 
         <section className="head-treatments page-width" aria-label="Head therapy treatments">
-          {treatments.map((treatment) => (
+          {headTreatments.map((treatment) => (
             <article className="head-treatment" id={treatment.id} key={treatment.id}>
               <div className="head-treatment__image">
                 <img src={treatment.image} alt={`${treatment.name} at Lumina Head Spa`} />

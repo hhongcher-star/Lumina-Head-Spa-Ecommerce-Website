@@ -1,33 +1,50 @@
-import { Droplets, Sparkles, Waves, Wind } from 'lucide-react';
-
 export const services = [
   {
     title: 'Facial',
-    description: 'Reveal healthier, brighter skin.',
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=85',
+    description: 'Thoughtful facial rituals that restore hydration, soften signs of stress, and reveal a healthier natural glow.',
+    image: '/images/facial/signature-peptide-renewal.webp',
     href: '/services/facial',
-    icon: Sparkles,
+    treatments: [
+      ['Signature Peptide Renewal', '/services/facial#signature-peptide-renewal'],
+      ['Line Repair', '/services/facial#line-repair'],
+      ['Unstressed Facial', '/services/facial#unstressed-facial'],
+      ['Timeless Facial', '/services/facial#timeless-facial'],
+    ],
   },
   {
     title: 'Head Treatment',
-    description: 'Nourish your scalp, revive your hair.',
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85',
+    description: 'Korean-inspired scalp care combining deep cleansing, steam, massage, and restorative treatments for total renewal.',
+    image: '/images/head-treatment/classic-head-spa.webp',
     href: '/services/head-treatment',
-    icon: Waves,
+    treatments: [
+      ['Total Therapy Experience', '/services/head-treatment#total-therapy'],
+      ['Signature Scalp Facial', '/services/head-treatment#signature-scalp-facial'],
+      ['Back Renewal Ritual', '/services/head-treatment#back-renewal-ritual'],
+      ['Essential Head Spa', '/services/head-treatment#essential-head-spa'],
+    ],
   },
   {
     title: 'Hair Blow Dry',
-    description: 'Perfect your look, feel your best.',
-    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=85',
+    description: 'A polished finishing ritual with gentle drying and professional styling that enhances your hair’s natural movement.',
+    image: '/images/hair-blow-dry/styling.avif',
     href: '/services/hair-blow-dry',
-    icon: Wind,
+    treatments: [
+      ['Professional Blow Dry', '/services/hair-blow-dry'],
+      ['Spa Finish Styling', '/services/hair-blow-dry'],
+      ['Smooth & Polished Finish', '/services/hair-blow-dry'],
+    ],
   },
   {
     title: 'Waxing',
-    description: 'Smooth skin, lasting confidence.',
-    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=85',
+    description: 'Precise, comfortable waxing services designed for smooth results, clean detail, and lasting confidence.',
+    image: '/images/waxing/full-face-waxing.webp',
     href: '/services/waxing',
-    icon: Droplets,
+    treatments: [
+      ['Full Face Waxing', '/services/waxing/face'],
+      ['Brow Waxing', '/services/waxing/face'],
+      ['Brow & Lip Waxing', '/services/waxing/face'],
+      ["Men's Waxing", '/services/waxing/man'],
+    ],
   },
 ];
 

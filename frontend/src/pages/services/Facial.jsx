@@ -4,7 +4,7 @@ import Footer from '../../components/layout/Footer';
 import Header from '../../components/layout/Header';
 import '../../styles/facial.css';
 
-const treatments = [
+export const facialTreatments = [
   {
     id: 'signature-peptide-renewal',
     name: 'The Signature Peptide Renewal',
@@ -96,7 +96,7 @@ export default function Facial() {
         </section>
 
         <section className="facial-treatments page-width" aria-label="Facial treatments">
-          {treatments.map((treatment) => (
+          {facialTreatments.map((treatment) => (
               <article className="facial-treatment" id={treatment.id} key={treatment.id}>
                 <img src={treatment.image} alt={`${treatment.name} facial treatment`} />
                 <div className="facial-treatment__content">

@@ -23,10 +23,11 @@ export default function Footer() {
         <details className="footer__group" open>
           <summary>Services</summary>
           <div className="footer__links">
-            <a href="/services/facial">Facial</a>
-            <a href="/services/head-treatment">Head Treatment</a>
-            <a href="/services/hair-blow-dry">Hair Blow Dry</a>
-            <a href="/services/waxing">Waxing</a>
+            <a href="/services">All Services</a>
+            <a href="/services?category=facial">Facial</a>
+            <a href="/services?category=head-treatment">Head Treatment</a>
+            <a href="/services?category=waxing">Waxing &amp; Finishing</a>
+            <a href="/services?category=mens-waxing">Men's Waxing</a>
           </div>
         </details>
         <details className="footer__group" open>

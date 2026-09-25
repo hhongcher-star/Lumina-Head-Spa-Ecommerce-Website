@@ -1,53 +1,53 @@
-import { ChevronDown, Droplets, Menu, Sparkles, Waves, Wind, X } from 'lucide-react';
+import { ChevronDown, Droplets, Menu, Search, Sparkles, Waves, Wind, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { getServiceSuggestions } from '../../data/serviceSearch';
 import Logo from './Logo';
 
 const serviceGroups = [
   {
     title: 'Facial',
-    href: '/services/facial',
+    href: '/services?category=facial',
     tagline: 'Radiant, healthy skin',
     icon: Sparkles,
     links: [
-      ['The Signature Peptide Renewal', '/services/facial#signature-peptide-renewal'],
-      ['Line Repair', '/services/facial#line-repair'],
-      ['Unstressed Facial', '/services/facial#unstressed-facial'],
-      ['Line Repair + Facial Lift', '/services/facial#line-repair-facial-lift'],
-      ['Unstress + Facial Lift', '/services/facial#unstress-facial-lift'],
-      ['Timeless Facial', '/services/facial#timeless-facial'],
+      ['Line Repair', '/services?category=facial#line-repair-facial'],
+      ['Timeless Facial', '/services?category=facial#timeless-facial'],
+      ['Unstressed Facial', '/services?category=facial#unstressed-facial'],
+      ['Line Repair + Facial Lift', '/services?category=facial#line-repair-facial-lift'],
+      ['Unstress + Facial Lift', '/services?category=facial#unstress-facial-lift'],
     ],
   },
   {
     title: 'Head Treatment',
-    href: '/services/head-treatment',
+    href: '/services?category=head-treatment',
     tagline: 'Relax, restore, rejuvenate',
     icon: Waves,
     links: [
-      ['Lumina Total Therapy Experience', '/services/head-treatment#total-therapy'],
-      ['Lumina Signature Scalp Facial', '/services/head-treatment#signature-scalp-facial'],
-      ['Lumina Back Renewal Ritual', '/services/head-treatment#back-renewal-ritual'],
-      ['Lumina Essential Head Spa', '/services/head-treatment#essential-head-spa'],
-      ['Express Scalp Therapy', '/services/head-treatment#express-scalp-therapy'],
+      ['Lumina Total Therapy Experience', '/services?category=head-treatment#lumina-total-therapy-experience'],
+      ['Lumina Signature Scalp Facial', '/services?category=head-treatment#lumina-signature-scalp-facial'],
+      ['Lumina Back Renewal Ritual', '/services?category=head-treatment#lumina-back-renewal-ritual'],
+      ['Lumina Essential Head Spa', '/services?category=head-treatment#lumina-essential-head-spa-a'],
+      ['Express Scalp Therapy', '/services?category=head-treatment#express-scalp-therapy'],
     ],
   },
   {
     title: 'Waxing',
-    href: '/services/waxing',
+    href: '/services?category=waxing',
     tagline: 'Smooth confidence',
     icon: Droplets,
     links: [
-      ['Waxing Services', '/services/waxing'],
-      ['Face Waxing', '/services/waxing/face'],
-      ["Men's Waxing", '/services/waxing/man'],
+      ['Full Face Waxing', '/services?category=waxing#full-face-waxing'],
+      ['Brow Waxing', '/services?category=waxing#brow-waxing'],
+      ['Brow + Lips Waxing', '/services?category=waxing#brow-lips-waxing'],
     ],
   },
   {
     title: 'Hair Blow Dry',
-    href: '/services/hair-blow-dry',
+    href: '/services?category=hair-blow-dry',
     tagline: 'Polished, effortless style',
     icon: Wind,
     links: [
-      ['Hair Blow Dry', '/services/hair-blow-dry'],
+      ['Hair Blow Dry', '/services?category=hair-blow-dry#hair-blow-dry'],
     ],
   },
 ];
@@ -56,8 +56,19 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchFocused, setSearchFocused] = useState(false);
   const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+  const isServicesPage = currentPath.startsWith('/services');
   const navClass = (path) => `main-nav__link${currentPath === path ? ' main-nav__link--active' : ''}`;
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const query = searchQuery.trim();
+    if (!query) return;
+    window.location.href = `/services?search=${encodeURIComponent(query)}`;
+  };
+  const searchSuggestions = getServiceSuggestions(searchQuery);
 
   useEffect(() => {
     if (!open) setServicesOpen(false);
@@ -83,8 +94,17 @@ export default function Header() {
     return () => window.removeEventListener('scroll', updateHeader);
   }, []);
 
+  useEffect(() => {
+    if (!isServicesPage || !servicesOpen) return undefined;
+    const closeServicesMenu = (event) => {
+      if (!event.target.closest('.nav-dropdown')) setServicesOpen(false);
+    };
+    document.addEventListener('pointerdown', closeServicesMenu);
+    return () => document.removeEventListener('pointerdown', closeServicesMenu);
+  }, [isServicesPage, servicesOpen]);
+
   return (
-    <header className={`site-header${open ? ' site-header--menu-open' : ''}${scrolled ? ' site-header--scrolled' : ''}`}>
+    <header className={`site-header${isServicesPage ? ' site-header--services-page' : ''}${open ? ' site-header--menu-open' : ''}${scrolled ? ' site-header--scrolled' : ''}`}>
       <div className="site-header__inner page-width">
         <Logo />
         <button
@@ -116,12 +136,12 @@ export default function Header() {
           <a className={navClass('/')} href="/">Home</a>
           <div className={`nav-dropdown${servicesOpen ? ' nav-dropdown--open' : ''}`}>
             <button
-              className={`main-nav__link nav-dropdown__button${currentPath.startsWith('/services/') ? ' main-nav__link--active' : ''}`}
+              className={`main-nav__link nav-dropdown__button${currentPath.startsWith('/services') ? ' main-nav__link--active' : ''}`}
               type="button"
               aria-expanded={servicesOpen}
               onClick={() => setServicesOpen((value) => !value)}
             >
-              Services <ChevronDown size={14} strokeWidth={1.7} />
+              Spa Menu <ChevronDown size={14} strokeWidth={1.7} />
             </button>
             <div className="nav-dropdown__menu">
               <div className="nav-dropdown__desktop">
@@ -151,17 +171,11 @@ export default function Header() {
                 </div>
               </div>
               <div className="nav-dropdown__mobile">
-                <a href="/services/facial">Facial</a>
-                <a href="/services/head-treatment">Head Treatment</a>
-                <details>
-                  <summary>Waxing <ChevronDown size={15} /></summary>
-                  <div>
-                    <a href="/services/waxing">Waxing Services</a>
-                    <a href="/services/waxing/face">Face Waxing</a>
-                    <a href="/services/waxing/man">Men's Waxing</a>
-                  </div>
-                </details>
-                <a href="/services/hair-blow-dry">Hair Blow Dry</a>
+                <a href="/services">All Services</a>
+                <a href="/services?category=facial">Facial</a>
+                <a href="/services?category=head-treatment">Head Treatment</a>
+                <a href="/services?category=waxing">Waxing &amp; Finishing</a>
+                <a href="/services?category=mens-waxing">Men's Waxing</a>
               </div>
             </div>
           </div>
@@ -170,7 +184,22 @@ export default function Header() {
           <a className={navClass('/spa-facilities')} href="/spa-facilities">Our Spa</a>
           <a className="mobile-nav-book button button--forest" href="/book-now">Book Now</a>
         </nav>
-        <a className="button button--header" href="/book-now">Book Now</a>
+        <div className="header-actions">
+          <a className="button button--header" href="/book-now">Book Now</a>
+          <form className="header-search" role="search" onSubmit={handleSearch} onFocus={() => setSearchFocused(true)} onBlur={() => window.setTimeout(() => setSearchFocused(false), 120)}>
+            <input name="site-search" type="search" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Search here..." aria-label="Search Lumina services" autoComplete="off" />
+            <button type="submit" aria-label="Submit search"><Search size={18} /></button>
+            {searchFocused && searchSuggestions.length > 0 && (
+              <div className="header-search__suggestions" role="listbox" aria-label="Recommended services">
+                {searchSuggestions.map((item) => (
+                  <a href={`/services?search=${encodeURIComponent(item.name)}`} role="option" key={`${item.category}-${item.name}`}>
+                    <span>{item.name}</span><small>{item.category}</small>
+                  </a>
+                ))}
+              </div>
+            )}
+          </form>
+        </div>
       </div>
     </header>
   );

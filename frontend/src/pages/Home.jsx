@@ -27,22 +27,15 @@ export default function Home() {
           <div className="hero__shade" />
           <div className="hero__content page-width">
             <div className="hero__intro">
-              <p className="eyebrow eyebrow--light">A QUIET PLACE TO RETURN TO YOURSELF</p>
-              <h1><span>Welcome to</span>Lumina Head Spa</h1>
-              <div className="hero__promo">
-                <span>Enjoy</span>
-                <strong>10% Off Head Spa</strong>
-                <em>Tuesday - Thursday</em>
-              </div>
-              <a className="button button--gold hero__booking-button" href="/book-now">Book Your Experience <ArrowRight size={19} /></a>
-              <div className="hero__business-hours">
-                <span className="hero__hours-line" />
-                <Clock3 size={22} />
-                <div>
-                  <strong>Business Hours</strong>
-                  <span>Monday - Sunday</span>
-                  <span>10:00 AM - 8:30 PM</span>
-                </div>
+              <h1>Bespoke Korean Head Spa - Elevating Beauty &amp; Wellness</h1>
+              <span className="hero__rule" />
+              <p className="hero__description">
+                Inspired by the Korean tradition of meticulous craftsmanship, we dedicate every
+                treatment to sincere, attentive care-nurturing both beauty and well-being.
+              </p>
+              <div className="hero__actions">
+                <a className="button button--gold hero__booking-button" href="/book-now">Book Now <ArrowRight size={19} /></a>
+                <a className="button button--soft hero__menu-button" href="/services/head-treatment">Spa Menu <ArrowRight size={19} /></a>
               </div>
             </div>
           </div>
@@ -50,30 +43,34 @@ export default function Home() {
 
         <section className="services-section section-padding">
           <div className="page-width">
-            <div className="section-heading">
-              <p className="eyebrow section-heading__eyebrow"><span>OUR SERVICES</span></p>
-              <h2>Care for Your Natural Beauty</h2>
-              <p>Modern care, quiet surroundings, and a treatment chosen for how you want to feel.</p>
+            <div className="section-heading services-section__heading">
+              <p className="eyebrow">OUR SERVICES</p>
+              <h2>Treatments for your<br />beauty and well-being.</h2>
+              <p>Every Lumina experience is thoughtfully tailored to restore balance, encourage confidence, and leave you feeling renewed.</p>
+              <a className="button button--gold services-section__button" href="/services/facial">
+                Explore Our Services <ArrowRight size={17} />
+              </a>
             </div>
             <div className="service-grid">
-              {services.map(({ title, description, image, href, icon: Icon }) => (
-                <a className="service-card" href={href} key={title}>
+              {services.map(({ title, description, image, href, treatments }) => (
+                <article className="service-card" key={title}>
                   <div className="service-card__image-wrap">
                     <img src={image} alt={`${title} service`} />
-                    <span className="service-card__icon"><Icon size={19} /></span>
                   </div>
                   <div className="service-card__body">
-                    <h3>{title}</h3>
+                    <h3><a href={href}>{title}</a></h3>
                     <p>{description}</p>
-                    <span className="text-link">Learn More <ArrowRight size={15} /></span>
+                    <div className="service-card__treatments">
+                      {treatments.map(([label, treatmentHref]) => (
+                        <a href={treatmentHref} key={label}>
+                          <span>{label}</span>
+                          <ArrowRight size={15} />
+                        </a>
+                      ))}
+                    </div>
                   </div>
-                </a>
+                </article>
               ))}
-            </div>
-            <div className="services-section__footer">
-              <span />
-              <a className="button button--forest" href="/services/facial">View All Services <ArrowRight size={17} /></a>
-              <p>BEAUTY BEGINS<br />WITH A CALMER YOU</p>
             </div>
           </div>
         </section>

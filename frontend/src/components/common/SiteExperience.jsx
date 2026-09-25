@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 const pages = {
   '/': ['Lumina Head Spa | Head Spa, Facials & Waxing in Chamblee, GA', 'Restore your calm at Lumina Head Spa in Chamblee, Georgia. Explore head spa therapy, advanced facials, waxing, hair styling, group spa events, and easy online booking.'],
+  '/services': ['Spa Services in Chamblee, GA | Lumina', 'Explore head spa, facial, waxing, massage, and beauty treatments at Lumina Head Spa in one complete service menu.'],
   '/book-now': ['Book an Appointment | Lumina Head Spa Chamblee', 'Book head spa, facial, waxing, massage, and beauty treatments at Lumina Head Spa in Chamblee, Georgia.'],
   '/services/facial': ['Advanced Facial Treatments in Chamblee, GA | Lumina', 'Discover personalized anti-aging, hydrating, calming, and lifting facial treatments at Lumina Head Spa in Chamblee, Georgia.'],
   '/services/head-treatment': ['Head Spa & Scalp Therapy in Chamblee, GA | Lumina', 'Experience restorative Japanese-inspired head spa and scalp therapy for deep relaxation, scalp health, and renewed hair at Lumina.'],
